@@ -17,8 +17,7 @@ import divisi.proker.ProkerDPMB;
 import admin.formlogin;
 import admin.MahasiswaAdmin;
 
-
-public class AnggotaDPMB extends javax.swing.JFrame implements AnggotaInterface {
+public class AnggotaDPMB extends ParentAnggota {
 
     /**
      * Creates new form MahasiswaAdmin

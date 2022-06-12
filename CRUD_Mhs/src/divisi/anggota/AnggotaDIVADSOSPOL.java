@@ -16,7 +16,7 @@ import koneksi.Koneksi;
 import divisi.proker.*;
 import admin.*;
 
-public class AnggotaDIVADSOSPOL extends javax.swing.JFrame implements AnggotaInterface {
+public class AnggotaDIVADSOSPOL extends ParentAnggota {
 
     /**
      * Creates new form MahasiswaAdmin

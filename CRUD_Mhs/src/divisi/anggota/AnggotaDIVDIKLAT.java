@@ -17,7 +17,7 @@ import divisi.proker.ProkerDIVDIKLAT;
 import admin.formlogin;
 import admin.MahasiswaAdmin;
 
-public class AnggotaDIVDIKLAT extends javax.swing.JFrame implements AnggotaInterface {
+public class AnggotaDIVDIKLAT extends ParentAnggota {
 
     /**
      * Creates new form MahasiswaAdmin

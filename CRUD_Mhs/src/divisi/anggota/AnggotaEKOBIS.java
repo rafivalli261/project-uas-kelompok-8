@@ -16,7 +16,7 @@ import koneksi.Koneksi;
 import divisi.proker.*;
 import admin.*;
 
-public class AnggotaEKOBIS extends javax.swing.JFrame implements AnggotaInterface {
+public class AnggotaEKOBIS extends ParentAnggota {
 
     /**
      * Creates new form MahasiswaAdmin
