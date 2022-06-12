@@ -6,7 +6,7 @@ package user;
 
 /**
  *
- * @author PRIVATE-PC
+ * @author Kelompok 8
  */
 
 import admin.formlogin;
@@ -238,19 +238,19 @@ public class User extends javax.swing.JFrame{
 
     private void Selengkapnya_BEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Selengkapnya_BEMActionPerformed
         // TODO add your handling code here:
-        new UserKemakom().show();
+        new UserKemakom().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Selengkapnya_BEMActionPerformed
 
     private void btn_organisasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_organisasiActionPerformed
         // TODO add your handling code here:
-        new UserOrganisasi().show();
+        new UserOrganisasi().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_organisasiActionPerformed
 
     private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
         // TODO add your handling code here:
-        new formlogin().show();
+        new formlogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnLoginActionPerformed
 

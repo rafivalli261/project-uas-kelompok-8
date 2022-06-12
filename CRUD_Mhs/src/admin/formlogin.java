@@ -1,22 +1,15 @@
 package admin;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 
 import java.sql.*;
 import javax.swing.JOptionPane;
 import koneksi.Koneksi;
-import divisi.proker.*;
 
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
-public class formlogin extends javax.swing.JFrame {
+public class formlogin extends AbstractLogin {
 
     protected static String nama;
 
@@ -209,94 +202,8 @@ public class formlogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        try {
-            Connection cn = Koneksi.getKoneksi();
-            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE username='"+ username.getText() + "'");
-            //            ResultSet id = cn.createStatement().executeQuery("SELECT * FROM admin WHERE username='"+ username.getText() + "'");
-            //            ResultSet jbtn = cn.createStatement().executeQuery("SELECT * FROM admin WHERE username='"+ username.getText() + "'");
-            if (rs.next()) {
-                if (password.getText().equals(rs.getString("password"))) {
-                    nama = rs.getString("username");
-                    if (jabatan.getSelectedItem().equals(rs.getString("jabatan"))){
-                        if(jabatan.getSelectedItem().equals("Admin")){
-                            nama = rs.getString("username");
-                            if(idDivisi.getSelectedItem().equals("0")){
-                                new AdminAdmin().show();
-                                this.dispose();
-                            }else {
-                                JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-                            }
-                        }
-
-                    }
-
-                    if(idDivisi.getSelectedItem().equals(rs.getString("idDivisi"))){
-                        if(jabatan.getSelectedItem().equals("Kadiv")){
-                            nama = rs.getString("username");
-                            if(idDivisi.getSelectedItem().equals("1")){
-                                new ProkerDPO().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("2")){
-                                new ProkerDPMB().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("3")){
-                                new ProkerDIVKOM().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("4")){
-                                new ProkerDIVDIKLAT().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("5")){
-                                new ProkerDIVROH().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("6")){
-                                new ProkerDIVADSOSPOL().show();
-                                this.dispose();
-                            } else if(idDivisi.getSelectedItem().equals("7")){
-                                new ProkerDPMB().show();
-                                this.dispose();
-                            } else {
-                                JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-                            }
-                        }
-                        else if (idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"))){
-                            JOptionPane.showMessageDialog(rootPane, "Jabatan Salah");
-                            username.setText("");
-                            password.setText("");
-                            username.requestFocus();
-                        } else if (!idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && jabatan.getSelectedItem().equals(rs.getString("jabatan"))){
-                            JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-                            username.setText("");
-                            password.setText("");
-                            username.requestFocus();
-                        }
-                    }
-                    if (!idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"))){
-                        JOptionPane.showMessageDialog(rootPane, "Divisi dan Jabatan Salah");
-                        username.setText("");
-                        password.setText("");
-                        username.requestFocus();
-                    }
-
-                }else {
-                    JOptionPane.showMessageDialog(rootPane, "Password salah");
-                    username.setText("");
-                    password.setText("");
-                    username.requestFocus();
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Username tidak ditemukan");
-                username.setText("");
-                password.setText("");
-                username.requestFocus();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "gagal");
-            username.setText("");
-            password.setText("");
-            username.requestFocus();
-
-        }     // TODO add your handling code here:
+        // TODO add your handling code here:
+        submit();
     }//GEN-LAST:event_submitActionPerformed
 
     private void idDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idDivisiActionPerformed
@@ -361,6 +268,107 @@ public class formlogin extends javax.swing.JFrame {
     private javax.swing.JButton submit;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void submit() {
+        try {
+            Connection cn = Koneksi.getKoneksi();
+            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE username='" + username.getText() + "'");
+            boolean a, b, c, d, e, f, g, h, i;
+            a = password.getPassword().equals(rs.getString("password"));
+            b = jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+            c = jabatan.getSelectedItem().equals("Admin");
+            d = idDivisi.getSelectedItem().equals("0");
+            e = idDivisi.getSelectedItem().equals(rs.getString("idDivisi"));
+            f = jabatan.getSelectedItem().equals("Kadiv");
+            g = idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+            h = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+            i = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+            if (rs.next()) {
+                if (a) {
+                    nama = rs.getString("username");
+                    if (b) {
+                        if (c) {
+                            nama = rs.getString("username");
+                            if (d) {
+                                new AdminAdmin().setVisible(true);
+                                this.dispose();
+                            } else {
+                                JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
+                            }
+                        }
+
+                    }
+
+                    if (e) {
+                        // ini harusnya bisa pake switch
+
+                        if (f) {
+                            nama = rs.getString("username");
+                            /*
+                            if (idDivisi.getSelectedItem().equals("1")) {
+                                new ProkerDPO().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("2")) {
+                                new ProkerDPMB().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("3")) {
+                                new ProkerDIVKOM().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("4")) {
+                                new ProkerDIVDIKLAT().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("5")) {
+                                new ProkerDIVROH().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("6")) {
+                                new ProkerDIVADSOSPOL().show();
+                                this.dispose();
+                            } else if (idDivisi.getSelectedItem().equals("7")) {
+                                new ProkerDPMB().show();
+                                this.dispose();
+                            } else {
+                                JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
+                            }
+                             */
+
+                            cekDivisi(idDivisi.getSelectedItem().toString());
+
+                        } else if (g) {
+                            JOptionPane.showMessageDialog(rootPane, "Jabatan Salah");
+                            reset();
+                        } else if (h) {
+                            JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
+                            reset();
+                        }
+                    }
+                    if (i) {
+                        JOptionPane.showMessageDialog(rootPane, "Divisi dan Jabatan Salah");
+                        reset();
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Password salah");
+                    reset();
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Username tidak ditemukan");
+                reset();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "gagal");
+            reset();
+        }
+    }
+
+    @Override
+    public void reset() {
+        username.setText("");
+        password.setText("");
+        username.requestFocus();
+    }
+
 }
 
 //if(jabatan.getSelectedItem().equals("Admin")){
@@ -400,7 +408,6 @@ public class formlogin extends javax.swing.JFrame {
 //                    } else {
 //                        JOptionPane.showMessageDialog(rootPane, "Jabatan salah");
 //                    }
-
 //                } else if (jabatan.getSelectedItem().equals(jbtn.getString("jabatan"))){
 //                    if(jabatan.getSelectedItem().equals("Admin")){
 //                        nama = rs.getString("username");
