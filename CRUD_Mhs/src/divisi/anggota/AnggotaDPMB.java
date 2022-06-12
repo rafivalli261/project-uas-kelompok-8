@@ -1,12 +1,8 @@
 package divisi.anggota;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author Kelompok 9
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,7 +16,7 @@ import koneksi.Koneksi;
 import divisi.proker.ProkerDPMB;
 import admin.formlogin;
 import admin.MahasiswaAdmin;
-import java.awt.Font;
+
 
 public class AnggotaDPMB extends javax.swing.JFrame implements AnggotaInterface {
 

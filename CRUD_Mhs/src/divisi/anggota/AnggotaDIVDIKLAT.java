@@ -1,12 +1,8 @@
 package divisi.anggota;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -205,17 +201,17 @@ public class AnggotaDIVDIKLAT extends javax.swing.JFrame implements AnggotaInter
     }//GEN-LAST:event_tabelProkerMouseClicked
 
     private void sideProkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideProkerActionPerformed
-        new ProkerDIVDIKLAT().show();
+        new ProkerDIVDIKLAT().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_sideProkerActionPerformed
 
     private void sideAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideAnggotaActionPerformed
-        new AnggotaDIVDIKLAT().show();
+        new AnggotaDIVDIKLAT().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_sideAnggotaActionPerformed
 
     private void sideLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideLogoutActionPerformed
-        new formlogin().show();
+        new formlogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_sideLogoutActionPerformed
 

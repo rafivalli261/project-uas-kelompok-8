@@ -1,12 +1,8 @@
 package divisi.anggota;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,10 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.Koneksi;
-import divisi.anggota.AnggotaDIVKOM;
 import divisi.proker.ProkerDIVKOM;
 import admin.formlogin;
 import admin.MahasiswaAdmin;

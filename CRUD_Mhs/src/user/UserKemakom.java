@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package user;
-
-import divisi.anggota.AnggotaDPMB;
 
 /**
  *
- * @author PRIVATE-PC
+ * @author Kelompok 8
  */
 public class UserKemakom extends javax.swing.JFrame {
 
@@ -352,7 +346,7 @@ public class UserKemakom extends javax.swing.JFrame {
     private void Btn_DiklatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DiklatActionPerformed
         // TODO add your handling code here:
         new UserDIVDIKLAT().show();
-        this.dispose(); 
+        this.dispose();
     }//GEN-LAST:event_Btn_DiklatActionPerformed
 
     private void Btn_KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_KembaliActionPerformed

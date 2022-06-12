@@ -1,12 +1,8 @@
 package divisi.proker;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.Koneksi;
-import divisi.proker.*;
 import admin.*;
 import divisi.anggota.*;
 
@@ -417,7 +412,7 @@ public class ProkerDIVROH extends javax.swing.JFrame implements ProkerInterface 
             Connection cn = Koneksi.getKoneksi();
             ResultSet rs3 = cn.createStatement().executeQuery("SELECT idProker, namaProker, deskripsiProker, tanggalProker, fotoProker FROM proker WHERE idDivisi=5");
             while (rs3.next()) {
-                String data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4) };
+                String data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4)};
                 model.addRow(data);
             }
         } catch (SQLException ex) {

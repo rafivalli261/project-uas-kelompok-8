@@ -1,12 +1,8 @@
 package divisi.anggota;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,8 +15,6 @@ import javax.swing.table.DefaultTableModel;
 import koneksi.Koneksi;
 import divisi.proker.*;
 import admin.*;
-import divisi.anggota.*;
-import java.awt.Font;
 
 public class AnggotaDIVROH extends javax.swing.JFrame implements AnggotaInterface {
 

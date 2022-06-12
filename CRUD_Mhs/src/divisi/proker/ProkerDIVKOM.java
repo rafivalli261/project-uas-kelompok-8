@@ -1,12 +1,8 @@
 package divisi.proker;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author User
+ * @author Kelompok 8
  */
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.Koneksi;
-import divisi.proker.*;
 import admin.*;
 import divisi.anggota.*;
 
@@ -451,7 +446,7 @@ public class ProkerDIVKOM extends javax.swing.JFrame implements ProkerInterface 
     public void edit() {
         try {
             Connection cn = Koneksi.getKoneksi();
-            cn.createStatement().executeUpdate("UPDATE proker SET namaProker ='" + namaProker.getText() + "',deskripsiProker ='" + deskripsiProker.getText() + "',tanggalProker ='" + tanggalProker.getText() + "' '"+ "'WHERE idProker = '" + idProker.getText() + "'");
+            cn.createStatement().executeUpdate("UPDATE proker SET namaProker ='" + namaProker.getText() + "',deskripsiProker ='" + deskripsiProker.getText() + "',tanggalProker ='" + tanggalProker.getText() + "' '" + "'WHERE idProker = '" + idProker.getText() + "'");
             tampilkan();
             reset();
         } catch (SQLException ex) {

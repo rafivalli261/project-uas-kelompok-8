@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package user;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
@@ -18,7 +14,7 @@ import koneksi.Koneksi;
 
 /**
  *
- * @author Kelompok 9
+ * @author Kelompok 8
  */
 public class UserKEC extends javax.swing.JFrame implements UserOrganisasiInterface {
 

@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package user;
 
-import admin.MahasiswaAdmin;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Image;
 import java.sql.Connection;
@@ -19,7 +14,7 @@ import koneksi.Koneksi;
 
 /**
  *
- * @author PRIVATE-PC
+ * @author Kelompok 8
  */
 public class UserDPMB extends javax.swing.JFrame implements UserDivisiInterface {
 

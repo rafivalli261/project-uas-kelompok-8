@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package divisi.proker;
 
 /**
  *
- * @author ASUS
+ * @author Kelompok 8
  */
 public interface ProkerInterface {
 
@@ -21,6 +17,6 @@ public interface ProkerInterface {
     void hapus();
 
     void reset();
-    
+
     void pilihBaris();
 }

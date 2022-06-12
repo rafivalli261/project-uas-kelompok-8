@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package user;
 
 /**
  *
- * @author PRIVATE-PC
+ * @author Kelompok 8
  */
 public class UserOrganisasi extends javax.swing.JFrame {
 
