@@ -168,7 +168,7 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
                 .addComponent(sideAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(sideLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
@@ -223,6 +223,8 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabelDivisi.setShowHorizontalLines(true);
+        tabelDivisi.setShowVerticalLines(true);
         tabelDivisi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelDivisiMouseClicked(evt);
@@ -256,7 +258,7 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(jLabel5))
@@ -270,18 +272,18 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTambah)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEdit)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnHapus)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 543, Short.MAX_VALUE)
                                 .addComponent(btnReset))
                             .addComponent(idDivisi)
                             .addComponent(namaDivisi)
-                            .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(deskripsi)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE))
                 .addGap(0, 767, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -311,8 +313,8 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
                     .addComponent(btnHapus)
                     .addComponent(btnReset))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -472,6 +474,8 @@ public class DivisiAdmin extends javax.swing.JFrame implements AdminInterface {
                 String data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4)};
                 model.addRow(data);
             }
+            tabelDivisi.getColumnModel().getColumn(0).setPreferredWidth(0); tabelDivisi.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tabelDivisi.getColumnModel().getColumn(2).setPreferredWidth(400); tabelDivisi.getColumnModel().getColumn(3).setPreferredWidth(70);
         } catch (SQLException ex) {
             Logger.getLogger(MahasiswaAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }

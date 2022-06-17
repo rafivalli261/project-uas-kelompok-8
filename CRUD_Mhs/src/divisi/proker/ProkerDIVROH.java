@@ -410,7 +410,7 @@ public class ProkerDIVROH extends javax.swing.JFrame implements ProkerInterface 
         }
         try {
             Connection cn = Koneksi.getKoneksi();
-            ResultSet rs3 = cn.createStatement().executeQuery("SELECT idProker, namaProker, deskripsiProker, tanggalProker, fotoProker FROM proker WHERE idDivisi=5");
+            ResultSet rs3 = cn.createStatement().executeQuery("SELECT idProker, namaProker, deskripsiProker, tanggalProker FROM proker WHERE idDivisi=5");
             while (rs3.next()) {
                 String data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4)};
                 model.addRow(data);

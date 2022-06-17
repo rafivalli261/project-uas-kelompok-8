@@ -45,13 +45,14 @@ public class AnggotaDPO extends ParentAnggota {
         sideLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelProker = new javax.swing.JTable();
+        tabelAnggota = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(247, 236, 209));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jPanel2.setBackground(new java.awt.Color(222, 182, 171));
 
@@ -100,7 +101,7 @@ public class AnggotaDPO extends ParentAnggota {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(sideAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sideProker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sideLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sideLogout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -115,12 +116,13 @@ public class AnggotaDPO extends ParentAnggota {
                 .addComponent(sideProker, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addComponent(sideAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
                 .addComponent(sideLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addGap(88, 88, 88))
         );
 
-        tabelProker.setModel(new javax.swing.table.DefaultTableModel(
+        tabelAnggota.setBackground(new java.awt.Color(172, 125, 136));
+        tabelAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -131,18 +133,21 @@ public class AnggotaDPO extends ParentAnggota {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabelProker.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelAnggota.setShowHorizontalLines(true);
+        tabelAnggota.setShowVerticalLines(true);
+        tabelAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelProkerMouseClicked(evt);
+                tabelAnggotaMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelProker);
+        jScrollPane1.setViewportView(tabelAnggota);
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        jLabel5.setText("DIVISI PENGEMBANGAN ORGANISASI");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("ANGGOTA");
 
-        jLabel8.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        jLabel8.setText("ANGGOTA DPO");
+        jLabel6.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        jLabel6.setText("DIVISI PENGEMBANGAN ORGANISASI");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,29 +157,34 @@ public class AnggotaDPO extends ParentAnggota {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(478, 478, 478)
-                        .addComponent(jLabel8))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(141, 141, 141)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(219, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(484, 484, 484)
+                        .addComponent(jLabel5)))
+                .addContainerGap(373, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(601, Short.MAX_VALUE)
+                    .addComponent(jLabel6)
+                    .addGap(529, 529, 529)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 63, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addGap(94, 94, 94)
+                .addComponent(jLabel5)
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(119, 119, 119)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(623, Short.MAX_VALUE)))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -197,9 +207,9 @@ public class AnggotaDPO extends ParentAnggota {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tabelProkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelProkerMouseClicked
+    private void tabelAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelAnggotaMouseClicked
 
-    }//GEN-LAST:event_tabelProkerMouseClicked
+    }//GEN-LAST:event_tabelAnggotaMouseClicked
 
     private void sideProkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideProkerActionPerformed
         new ProkerDPO().show();
@@ -257,7 +267,7 @@ public class AnggotaDPO extends ParentAnggota {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -265,12 +275,12 @@ public class AnggotaDPO extends ParentAnggota {
     private javax.swing.JButton sideAnggota;
     private javax.swing.JButton sideLogout;
     private javax.swing.JButton sideProker;
-    private javax.swing.JTable tabelProker;
+    private javax.swing.JTable tabelAnggota;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void tampilkan() {
-        int row = tabelProker.getRowCount();
+        int row = tabelAnggota.getRowCount();
         for (int a = 0; a < row; a++) {
             model.removeRow(0);
         }
@@ -299,7 +309,13 @@ public class AnggotaDPO extends ParentAnggota {
                 return (column == col) ? Icon.class : super.getColumnClass(column);
             }
         };
-        tabelProker.setModel(model);
+        tabelAnggota.setModel(model);
+        tabelAnggota.setRowHeight(138);
+        tabelAnggota.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(1).setPreferredWidth(80);
+        tabelAnggota.getColumnModel().getColumn(2).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(3).setPreferredWidth(30);
+        tabelAnggota.getColumnModel().getColumn(3).setPreferredWidth(70);
         tampilkan();
     }
 }

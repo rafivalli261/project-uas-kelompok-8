@@ -46,12 +46,11 @@ public class AnggotaDPMB extends ParentAnggota {
         sideLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelProker = new javax.swing.JTable();
+        tabelAnggota = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1777, 923));
 
         jPanel1.setBackground(new java.awt.Color(247, 236, 209));
 
@@ -80,6 +79,7 @@ public class AnggotaDPMB extends ParentAnggota {
         sideLogout.setBackground(new java.awt.Color(172, 125, 136));
         sideLogout.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         sideLogout.setText("Logout");
+        sideLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sideLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sideLogoutActionPerformed(evt);
@@ -117,9 +117,9 @@ public class AnggotaDPMB extends ParentAnggota {
                 .addGap(174, 174, 174))
         );
 
-        tabelProker.setBackground(new java.awt.Color(172, 125, 136));
-        tabelProker.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        tabelProker.setModel(new javax.swing.table.DefaultTableModel(
+        tabelAnggota.setBackground(new java.awt.Color(172, 125, 136));
+        tabelAnggota.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        tabelAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -130,12 +130,12 @@ public class AnggotaDPMB extends ParentAnggota {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabelProker.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelProkerMouseClicked(evt);
+                tabelAnggotaMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelProker);
+        jScrollPane1.setViewportView(tabelAnggota);
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel5.setText("DIVISI PENYALURAN MINAT DAN BAKAT");
@@ -169,7 +169,7 @@ public class AnggotaDPMB extends ParentAnggota {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -193,9 +193,9 @@ public class AnggotaDPMB extends ParentAnggota {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tabelProkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelProkerMouseClicked
+    private void tabelAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelAnggotaMouseClicked
 
-    }//GEN-LAST:event_tabelProkerMouseClicked
+    }//GEN-LAST:event_tabelAnggotaMouseClicked
 
     private void sideProkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideProkerActionPerformed
         new ProkerDPMB().show();
@@ -261,12 +261,12 @@ public class AnggotaDPMB extends ParentAnggota {
     private javax.swing.JButton sideAnggota;
     private javax.swing.JButton sideLogout;
     private javax.swing.JButton sideProker;
-    private javax.swing.JTable tabelProker;
+    private javax.swing.JTable tabelAnggota;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void tampilkan() {
-        int row = tabelProker.getRowCount();
+        int row = tabelAnggota.getRowCount();
         for (int a = 0; a < row; a++) {
             model.removeRow(0);
         }
@@ -295,7 +295,13 @@ public class AnggotaDPMB extends ParentAnggota {
                 return (column == col) ? Icon.class : super.getColumnClass(column);
             }
         };
-        tabelProker.setModel(model);
+        tabelAnggota.setModel(model);
+        tabelAnggota.setRowHeight(138);
+        tabelAnggota.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(1).setPreferredWidth(80);
+        tabelAnggota.getColumnModel().getColumn(2).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(3).setPreferredWidth(30);
+        tabelAnggota.getColumnModel().getColumn(3).setPreferredWidth(70);
         tampilkan();
     }
 }

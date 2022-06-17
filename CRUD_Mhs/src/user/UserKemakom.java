@@ -277,6 +277,7 @@ public class UserKemakom extends javax.swing.JFrame {
         Btn_Kembali.setBackground(new java.awt.Color(172, 125, 136));
         Btn_Kembali.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         Btn_Kembali.setText("KEMBALI");
+        Btn_Kembali.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_KembaliActionPerformed(evt);

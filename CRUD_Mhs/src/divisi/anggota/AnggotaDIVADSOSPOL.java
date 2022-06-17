@@ -39,7 +39,7 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelProker = new javax.swing.JTable();
+        tabelAnggota = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         sideAnggota = new javax.swing.JButton();
         sideLogout = new javax.swing.JButton();
@@ -55,8 +55,8 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
         jPanel1.setForeground(new java.awt.Color(0, 204, 204));
         jPanel1.setToolTipText("");
 
-        tabelProker.setBackground(new java.awt.Color(172, 125, 136));
-        tabelProker.setModel(new javax.swing.table.DefaultTableModel(
+        tabelAnggota.setBackground(new java.awt.Color(172, 125, 136));
+        tabelAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,13 +67,15 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabelProker.setGridColor(new java.awt.Color(222, 182, 171));
-        tabelProker.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelAnggota.setGridColor(new java.awt.Color(222, 182, 171));
+        tabelAnggota.setShowHorizontalLines(true);
+        tabelAnggota.setShowVerticalLines(true);
+        tabelAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelProkerMouseClicked(evt);
+                tabelAnggotaMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelProker);
+        jScrollPane1.setViewportView(tabelAnggota);
 
         jPanel2.setBackground(new java.awt.Color(222, 182, 171));
         jPanel2.setPreferredSize(new java.awt.Dimension(276, 750));
@@ -93,6 +95,7 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
         sideLogout.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         sideLogout.setForeground(new java.awt.Color(17, 17, 17));
         sideLogout.setText("Logout");
+        sideLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sideLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sideLogoutActionPerformed(evt);
@@ -144,7 +147,7 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
         jLabel5.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel5.setText("DIVISI ADVOKASI, SOSIAL, DAN POLITIK");
 
-        jLabel8.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel8.setText("ANGGOTA DIVADSOSPOL");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -160,12 +163,12 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(247, 247, 247)
+                                .addGap(274, 274, 274)
                                 .addComponent(jLabel5))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(404, 404, 404)
+                                .addGap(363, 363, 363)
                                 .addComponent(jLabel8)))))
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +176,11 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(80, 80, 80)
                         .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -188,7 +191,7 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +202,9 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tabelProkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelProkerMouseClicked
+    private void tabelAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelAnggotaMouseClicked
 
-    }//GEN-LAST:event_tabelProkerMouseClicked
+    }//GEN-LAST:event_tabelAnggotaMouseClicked
 
     private void sideLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sideLogoutActionPerformed
         new formlogin().show();
@@ -266,12 +269,30 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
     private javax.swing.JButton sideAnggota;
     private javax.swing.JButton sideLogout;
     private javax.swing.JButton sideProker;
-    private javax.swing.JTable tabelProker;
+    private javax.swing.JTable tabelAnggota;
     // End of variables declaration//GEN-END:variables
 
-    @Override
+//    @Override
+//    public void tampilkan() {
+//        int row = tabelProker.getRowCount();
+//        for (int a = 0; a < row; a++) {
+//            model.removeRow(0);
+//        }
+//        try {
+//            Connection cn = Koneksi.getKoneksi();
+//            ResultSet rs3 = cn.createStatement().executeQuery("SELECT nim, nama, kelas, angkatan, foto FROM mahasiswa WHERE idDivisi=6 AND ketuaDivisi=0");
+//            while (rs3.next()) {
+//                Object data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4), new ImageIcon("src/upload/" + rs3.getString(5))};
+//                model.addRow(data);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(MahasiswaAdmin.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+
+  @Override
     public void tampilkan() {
-        int row = tabelProker.getRowCount();
+        int row = tabelAnggota.getRowCount();
         for (int a = 0; a < row; a++) {
             model.removeRow(0);
         }
@@ -279,7 +300,7 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
             Connection cn = Koneksi.getKoneksi();
             ResultSet rs3 = cn.createStatement().executeQuery("SELECT nim, nama, kelas, angkatan, foto FROM mahasiswa WHERE idDivisi=6 AND ketuaDivisi=0");
             while (rs3.next()) {
-                Object data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4), new ImageIcon("src/upload/" + rs3.getString(5))};
+                Object data[] = {rs3.getString(1), rs3.getString(2), rs3.getString(3), rs3.getString(4),new ImageIcon("src/upload/" + rs3.getString(5))};
                 model.addRow(data);
             }
         } catch (SQLException ex) {
@@ -287,11 +308,28 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
         }
     }
 
+//    @Override
+//    public void inisiasi() {
+//        this.sideAnggota.requestFocusInWindow();
+//        this.setExtendedState(MAXIMIZED_BOTH);
+//        initComponents();
+//        String[] judul = {"NIM", "Nama", "Kelas", "Angkatan", "Foto"};
+//        model = new DefaultTableModel(judul, 0) {
+//            @Override
+//            public Class getColumnClass(int column) {
+//                // variabel col bisa diganti dengan index kolom yang digunakan sebagai gambar
+//                int col = 4;
+//                return (column == col) ? Icon.class : super.getColumnClass(column);
+//            }
+//        };
+//        tabelProker.setModel(model);
+//        tampilkan();
+//    }
+
     @Override
     public void inisiasi() {
         this.sideAnggota.requestFocusInWindow();
         this.setExtendedState(MAXIMIZED_BOTH);
-        initComponents();
         String[] judul = {"NIM", "Nama", "Kelas", "Angkatan", "Foto"};
         model = new DefaultTableModel(judul, 0) {
             @Override
@@ -301,7 +339,13 @@ public class AnggotaDIVADSOSPOL extends ParentAnggota {
                 return (column == col) ? Icon.class : super.getColumnClass(column);
             }
         };
-        tabelProker.setModel(model);
+        tabelAnggota.setModel(model);
+        tabelAnggota.setRowHeight(138);
+        tabelAnggota.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(1).setPreferredWidth(80);
+        tabelAnggota.getColumnModel().getColumn(2).setPreferredWidth(20);
+        tabelAnggota.getColumnModel().getColumn(3).setPreferredWidth(30);
+        tabelAnggota.getColumnModel().getColumn(4).setPreferredWidth(70);
         tampilkan();
     }
 }

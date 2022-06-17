@@ -57,8 +57,6 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
         jLabel3 = new javax.swing.JLabel();
         namaOrganisasi = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        fotoOrganisasi = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         deskripsiOrganisasi = new javax.swing.JTextField();
 
@@ -245,9 +243,6 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
         jLabel11.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLabel11.setText("ORGANISASI");
 
-        jLabel4.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jLabel4.setText("Foto Organisasi");
-
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jLabel5.setText("Deskripsi");
 
@@ -257,19 +252,17 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jLabel11)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(447, 447, 447)
+                        .addComponent(jLabel11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTambah)
@@ -282,11 +275,10 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(namaOrganisasi, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
-                                    .addComponent(fotoOrganisasi)
+                                    .addComponent(namaOrganisasi)
                                     .addComponent(deskripsiOrganisasi, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(idOrganisasi))))
-                        .addContainerGap(397, Short.MAX_VALUE))))
+                                    .addComponent(idOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(0, 398, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,7 +286,7 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
+                .addGap(95, 95, 95)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(idOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -302,22 +294,18 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(namaOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(fotoOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(deskripsiOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTambah)
                     .addComponent(btnEdit)
                     .addComponent(btnHapus)
                     .addComponent(btnReset))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -433,13 +421,11 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTambah;
     private javax.swing.JTextField deskripsiOrganisasi;
-    private javax.swing.JTextField fotoOrganisasi;
     private javax.swing.JTextField idOrganisasi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -459,7 +445,6 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
     public void reset() {
         idOrganisasi.setText("");
         namaOrganisasi.setText("");
-        fotoOrganisasi.setText("");
         deskripsiOrganisasi.setText("");
 //        anggota.setText("");
 //        namaProker.setText("");
@@ -476,10 +461,10 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
         }
         try {
             Connection cn = Koneksi.getKoneksi();
-            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM (SELECT organisasi.idOrganisasi,namaOrganisasi, fotoOrganisasi, deskripsiOrganisasi,nama AS ketua FROM organisasi LEFT JOIN (SELECT idOrganisasi,nama FROM mahasiswa WHERE ketuaOrganisasi=1) AS a ON a.idOrganisasi=organisasi.idOrganisasi)AS b WHERE b.idOrganisasi>0 ORDER BY idOrganisasi");
+            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM (SELECT organisasi.idOrganisasi,namaOrganisasi, deskripsiOrganisasi,nama AS ketua FROM organisasi LEFT JOIN (SELECT idOrganisasi,nama FROM mahasiswa WHERE ketuaOrganisasi=1) AS a ON a.idOrganisasi=organisasi.idOrganisasi)AS b WHERE b.idOrganisasi>0 ORDER BY idOrganisasi");
             while (rs.next()) {
                 // pake string karena di db pake varchar
-                Object data[] = {rs.getString(1), rs.getString(2), new ImageIcon("./" + rs.getString(3)), rs.getString(4), rs.getString(5)};
+                Object data[] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)};
                 model.addRow(data);
             }
         } catch (SQLException ex) {
@@ -491,7 +476,9 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
     public void edit() {
         try {
             Connection cn = Koneksi.getKoneksi();
-            cn.createStatement().executeUpdate("UPDATE organisasi SET namaOrganisasi ='" + namaOrganisasi.getText() + "',fotoOrganisasi ='" + fotoOrganisasi.getText() + "',deskripsiOrganisasi ='" + deskripsiOrganisasi.getText() + "'WHERE idOrganisasi = '" + idOrganisasi.getText() + "'");
+            cn.createStatement().executeUpdate("UPDATE organisasi SET namaOrganisasi ='" + namaOrganisasi.getText() + "',deskripsiOrganisasi = '" +deskripsiOrganisasi.getText() + "'WHERE idOrganisasi = '" + idOrganisasi.getText() + "'");
+            //cn.createStatement().executeUpdate("UPDATE mahasiswa SET idDivisi ='" + idDivisi.getSelectedItem() + "',idOrganisasi ='" + idOrganisasi.getSelectedItem() ++ "'WHERE NIM = '" + NIM.getText() + "'");
+
             tampilkan();
             reset();
         } catch (SQLException ex) {
@@ -504,7 +491,7 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
 
         try {
             Connection cn = Koneksi.getKoneksi();
-            cn.createStatement().executeUpdate("INSERT INTO organisasi VALUES" + "('" + idOrganisasi.getText() + "','" + namaOrganisasi.getText() + "','" + fotoOrganisasi.getText() + "','" + deskripsiOrganisasi.getText() + "')");
+            cn.createStatement().executeUpdate("INSERT INTO organisasi VALUES" + "('" + idOrganisasi.getText() + "','" + namaOrganisasi.getText() + "','" + deskripsiOrganisasi.getText() + "')");
 //            cn.createStatement().executeUpdate("INSERT INTO divisi VALUES" + "('" + idDivisi.getText() + "','" + namaDivisi.getText() + "','" + deskripsi.getText() + "','" + nama.getText() + "','" + kelas.getText() + "','" + angkatan.getText() + "','" + foto.getText() + "','" + ketuaDivisi.getText()+ "','" + ketuaOrganisasi.getText() + "')");
             tampilkan();
             reset();
@@ -544,14 +531,14 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
     public void inisiasi() {
         this.sideOrganisasi1.requestFocusInWindow();
         this.setExtendedState(MAXIMIZED_BOTH);
-        String[] judul = {"Id Organisasi", "Nama Organisasi", "Foto Organisasi", "Deskripsi Organisasi", "Ketua"};
+        String[] judul = {"Id Organisasi", "Nama Organisasi", "Deskripsi Organisasi", "Ketua"};
         model = new DefaultTableModel(judul, 0) {
-            @Override
-            public Class getColumnClass(int column) {
-                // variabel col bisa diganti dengan index kolom yang digunakan sebagai gambar
-                int col = 2;
-                return (column == col) ? Icon.class : super.getColumnClass(column);
-            }
+//            @Override
+//            public Class getColumnClass(int column) {
+//                // variabel col bisa diganti dengan index kolom yang digunakan sebagai gambar
+//                int col = 2;
+//                return (column == col) ? Icon.class : super.getColumnClass(column);
+//            }
         };
         tabelOrganisasi.setModel(model);
         tampilkan();
@@ -563,8 +550,7 @@ public class OrganisasiAdmin extends javax.swing.JFrame implements AdminInterfac
         if (i > -1) {
             idOrganisasi.setText(model.getValueAt(i, 0).toString());
             namaOrganisasi.setText(model.getValueAt(i, 1).toString());
-            fotoOrganisasi.setText(model.getValueAt(i, 2).toString());
-            deskripsiOrganisasi.setText(model.getValueAt(i, 3).toString());
+            deskripsiOrganisasi.setText(model.getValueAt(i, 2).toString());
 //            anggota.setText(model.getValueAt(i,4).toString());
 //            namaProker.setText(model.getValueAt(i,5).toString());
 //            foto.setText(model.getValueAt(i,6).toString());

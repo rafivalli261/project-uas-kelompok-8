@@ -364,7 +364,7 @@ public class UserEKOBIS extends javax.swing.JFrame implements UserDivisiInterfac
             // memunculkan ketua
             Connection cn = Koneksi.getKoneksi();
 
-            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE IdDivisi=4");
+            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE IdDivisi=7");
             rs.next();
             String ketua = rs.getString("username");
             Nama_Ketua.setText("Ketua : " + ketua);

@@ -42,7 +42,7 @@ abstract class AbstractLogin extends JFrame {
                 this.dispose();
                 break;
             case "7":
-                new ProkerDPMB().setVisible(true);
+                new ProkerEKOBIS().setVisible(true);
                 this.dispose();
                 break;
             default:

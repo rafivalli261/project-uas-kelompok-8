@@ -3,6 +3,7 @@ package admin;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import koneksi.Koneksi;
+import user.*;
 
 /**
  *
@@ -41,6 +42,8 @@ public class formlogin extends AbstractLogin {
         idDivisi = new javax.swing.JComboBox<>();
         submit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -167,19 +170,54 @@ public class formlogin extends AbstractLogin {
                 .addGap(27, 27, 27))
         );
 
+        jPanel6.setBackground(new java.awt.Color(220, 182, 171));
+        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(182, 150, 152)));
+        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Asset 3.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(265, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(17, 17, 17)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(246, Short.MAX_VALUE))
         );
@@ -216,6 +254,12 @@ public class formlogin extends AbstractLogin {
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        new User().show();
+        this.dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -260,8 +304,14 @@ public class formlogin extends AbstractLogin {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JComboBox<String> jabatan;
     private javax.swing.JPasswordField password;
     private javax.swing.JButton submit;
@@ -274,23 +324,24 @@ public class formlogin extends AbstractLogin {
             Connection cn = Koneksi.getKoneksi();
             ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE username='" + username.getText() + "'");
             boolean a, b, c, d, e, f, g, h, i;
-            a = password.getPassword().equals(rs.getString("password"));
-            b = jabatan.getSelectedItem().equals(rs.getString("jabatan"));
-            c = jabatan.getSelectedItem().equals("Admin");
-            d = idDivisi.getSelectedItem().equals("0");
-            e = idDivisi.getSelectedItem().equals(rs.getString("idDivisi"));
-            f = jabatan.getSelectedItem().equals("Kadiv");
-            g = idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
-            h = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && jabatan.getSelectedItem().equals(rs.getString("jabatan"));
-            i = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+            
             if (rs.next()) {
+                a = password.getText().equals(rs.getString("password"));
+                b = jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+                c = jabatan.getSelectedItem().equals("Admin");
+                d = idDivisi.getSelectedItem().equals("0");
+                e = idDivisi.getSelectedItem().equals(rs.getString("idDivisi"));
+                f = jabatan.getSelectedItem().equals("Kadiv");
+                g = idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+                h = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && jabatan.getSelectedItem().equals(rs.getString("jabatan"));
+                i = !idDivisi.getSelectedItem().equals(rs.getString("idDivisi")) && !jabatan.getSelectedItem().equals(rs.getString("jabatan"));
                 if (a) {
                     nama = rs.getString("username");
                     if (b) {
                         if (c) {
                             nama = rs.getString("username");
                             if (d) {
-                                new AdminAdmin().setVisible(true);
+                                new DashboardAdmin().setVisible(true);
                                 this.dispose();
                             } else {
                                 JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
@@ -369,83 +420,3 @@ public class formlogin extends AbstractLogin {
     }
 
 }
-
-//if(jabatan.getSelectedItem().equals("Admin")){
-//                        nama = rs.getString("username");
-//                        if(idDivisi.getSelectedItem().equals("0")){
-//                            new AdminAdmin().show();
-//                            this.dispose();
-//                        } else {
-//                            JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-//                    }
-//                    } else if(jabatan.getSelectedItem().equals("Kadiv")){
-//                        nama = rs.getString("username");
-//                        if(idDivisi.getSelectedItem().equals("1")){
-//                            new ProkerDPO().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("2")){
-//                            new ProkerDPMB().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("3")){
-//                            new ProkerDIVKOM().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("4")){
-//                            new ProkerDIVDIKLAT().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("5")){
-//                            new ProkerDIVROH().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("6")){
-//                            new ProkerDIVADSOSPOL().show();
-//                            this.dispose();
-//                        } else if(idDivisi.getSelectedItem().equals("7")){
-//                            new ProkerDPMB().show();
-//                            this.dispose();
-//                        } else {
-//                            JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-//                        }
-//                    } else {
-//                        JOptionPane.showMessageDialog(rootPane, "Jabatan salah");
-//                    }
-//                } else if (jabatan.getSelectedItem().equals(jbtn.getString("jabatan"))){
-//                    if(jabatan.getSelectedItem().equals("Admin")){
-//                        nama = rs.getString("username");
-//                        if(idDivisi.getSelectedItem().equals("0")){
-//                            new AdminAdmin().show();
-//                            this.dispose();
-//                        } else {
-//                            JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-//                        }
-//                    } else if(idDivisi.getSelectedItem().equals(id.getString("idDivisi"))){
-//                        if(jabatan.getSelectedItem().equals("Kadiv")){
-//                            nama = rs.getString("username");
-//                            if(idDivisi.getSelectedItem().equals("1")){
-//                                new ProkerDPO().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("2")){
-//                                new ProkerDPMB().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("3")){
-//                                new ProkerDIVKOM().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("4")){
-//                                new ProkerDIVDIKLAT().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("5")){
-//                                new ProkerDIVROH().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("6")){
-//                                new ProkerDIVADSOSPOL().show();
-//                                this.dispose();
-//                            } else if(idDivisi.getSelectedItem().equals("7")){
-//                                new ProkerDPMB().show();
-//                                this.dispose();
-//                            } else {
-//                                JOptionPane.showMessageDialog(rootPane, "Divisi Salah");
-//                            }
-//                        }
-//                    }
-//                }else {
-//                    JOptionPane.showMessageDialog(rootPane, "Password salah");
-//                    password.setText("");
-//                    username.requestFocus();

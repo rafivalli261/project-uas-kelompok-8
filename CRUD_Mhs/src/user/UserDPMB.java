@@ -371,7 +371,7 @@ public class UserDPMB extends javax.swing.JFrame implements UserDivisiInterface 
         try {
             Connection cn = Koneksi.getKoneksi();
 
-            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE IdDivisi=6");
+            ResultSet rs = cn.createStatement().executeQuery("SELECT * FROM admin WHERE IdDivisi=2");
             rs.next();
             String ketua = rs.getString("username");
             Nama_Ketua.setText("Ketua : " + ketua);

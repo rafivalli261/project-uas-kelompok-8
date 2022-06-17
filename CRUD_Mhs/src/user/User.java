@@ -53,6 +53,7 @@ public class User extends javax.swing.JFrame{
         btn_organisasi.setBackground(new java.awt.Color(172, 125, 136));
         btn_organisasi.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         btn_organisasi.setText("SELENGKAPNYA");
+        btn_organisasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_organisasi.setRequestFocusEnabled(false);
         btn_organisasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +120,7 @@ public class User extends javax.swing.JFrame{
         Selengkapnya_BEM.setBackground(new java.awt.Color(172, 125, 136));
         Selengkapnya_BEM.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         Selengkapnya_BEM.setText("SELENGKAPNYA");
+        Selengkapnya_BEM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Selengkapnya_BEM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Selengkapnya_BEMActionPerformed(evt);
@@ -187,6 +189,7 @@ public class User extends javax.swing.JFrame{
         BtnLogin.setBackground(new java.awt.Color(172, 125, 136));
         BtnLogin.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         BtnLogin.setText("Login");
+        BtnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnLoginActionPerformed(evt);

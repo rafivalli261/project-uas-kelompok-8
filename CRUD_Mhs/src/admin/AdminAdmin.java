@@ -270,7 +270,7 @@ public class AdminAdmin extends javax.swing.JFrame implements AdminInterface {
                 .addComponent(sideAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(sideLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(559, Short.MAX_VALUE))
         );
 
         upload.setBackground(new java.awt.Color(172, 125, 136));
@@ -393,9 +393,9 @@ public class AdminAdmin extends javax.swing.JFrame implements AdminInterface {
                         .addComponent(btnHapus)
                         .addComponent(btnReset)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1094, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE)
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -617,7 +617,9 @@ public class AdminAdmin extends javax.swing.JFrame implements AdminInterface {
                 Object data[] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), new ImageIcon("src/uploadAdmin/" + rs.getString(5))};
                 model.addRow(data);
             }
-            tabelAdmin.setRowHeight(100);
+            tabelAdmin.setRowHeight(138);
+            tabelAdmin.getColumnModel().getColumn(1).setPreferredWidth(140); tabelAdmin.getColumnModel().getColumn(2).setPreferredWidth(70);
+            tabelAdmin.getColumnModel().getColumn(3).setPreferredWidth(30);
         } catch (SQLException ex) {
             Logger.getLogger(AdminAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -626,11 +628,16 @@ public class AdminAdmin extends javax.swing.JFrame implements AdminInterface {
     @Override
     public void edit() {
         try {
-            Connection cn = Koneksi.getKoneksi();
-            File fl = olahGambar(this.filename);
-            cn.createStatement().executeUpdate("UPDATE admin SET password ='" + password.getText() + "',jabatan ='" + jabatan.getSelectedItem() + "',idDivisi ='" + idDivisi.getSelectedItem() + "',foto ='" + fl.toString() + "'WHERE username = '" + username.getText() + "'");
-            tampilkan();
-            reset();
+            if((jabatan.getSelectedItem().equals("Admin") && idDivisi.getSelectedItem().equals("0")) ||
+                jabatan.getSelectedItem().equals("Kadiv") && !idDivisi.getSelectedItem().equals("0")){
+                Connection cn = Koneksi.getKoneksi();
+                File fl = olahGambar(this.filename);
+                cn.createStatement().executeUpdate("UPDATE admin SET password ='" + password.getText() + "',jabatan ='" + jabatan.getSelectedItem() + "',idDivisi ='" + idDivisi.getSelectedItem() + "',foto ='" + fl.toString() + "'WHERE username = '" + username.getText() + "'");
+                tampilkan();
+                reset();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "id Divisi tidak cocok dengan jabatan!");
+            }
         } catch (SQLException | NullPointerException ex) {
 //            Logger.getLogger(MahasiswaAdmin.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Terdapat kesalahan dalam pengisian data / terdapat field kosong / tidak berubah", "Pesan Info", JOptionPane.INFORMATION_MESSAGE);
@@ -640,12 +647,19 @@ public class AdminAdmin extends javax.swing.JFrame implements AdminInterface {
     @Override
     public void tambah() {
         try {
-            File fl = olahGambar(this.filename);
-            Connection cn = Koneksi.getKoneksi();
-            cn.createStatement().executeUpdate("INSERT INTO admin VALUES" + "('" + username.getText() + "','" + password.getText() + "','" + jabatan.getSelectedItem() + "','" + idDivisi.getSelectedItem() + "','" + fl.toString() + "')");
-            tampilkan();
-            reset();
+            if ((jabatan.getSelectedItem().equals("Admin") && idDivisi.getSelectedItem().equals("0")) ||
+                jabatan.getSelectedItem().equals("Kadiv") && !idDivisi.getSelectedItem().equals("0")){
+                File fl = olahGambar(this.filename);                
+                Connection cn = Koneksi.getKoneksi();
+                cn.createStatement().executeUpdate("INSERT INTO admin VALUES" + "('" + username.getText() + "','" + password.getText() + "','" + jabatan.getSelectedItem() + "','" + idDivisi.getSelectedItem() + "','" + fl.toString() + "')");
+                tampilkan();
+                reset();
+            } else{
+                JOptionPane.showMessageDialog(rootPane, "id Divisi tidak cocok dengan jabatan!");
+            }
+         
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Username telah tersedia!");
             Logger.getLogger(MahasiswaAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

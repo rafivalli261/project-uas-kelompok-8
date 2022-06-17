@@ -331,13 +331,13 @@ public class MahasiswaAdmin extends javax.swing.JFrame implements AdminInterface
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(btnTambah)
                                         .addGap(18, 18, 18)
@@ -347,8 +347,7 @@ public class MahasiswaAdmin extends javax.swing.JFrame implements AdminInterface
                                         .addGap(465, 465, 465)
                                         .addComponent(btnReset))
                                     .addComponent(ketuaDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ketuaOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1)))
+                                    .addComponent(ketuaOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -370,7 +369,8 @@ public class MahasiswaAdmin extends javax.swing.JFrame implements AdminInterface
                                         .addComponent(angkatan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(NIM, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(idDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(idOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(443, 443, 443)
                         .addComponent(jLabel11)))
@@ -429,7 +429,7 @@ public class MahasiswaAdmin extends javax.swing.JFrame implements AdminInterface
                             .addComponent(btnHapus)
                             .addComponent(btnReset))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -610,19 +610,19 @@ public class MahasiswaAdmin extends javax.swing.JFrame implements AdminInterface
                 // pake string karena di db pake varchar
                 Object data[] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), new ImageIcon("src/upload/" + rs.getString(7)), rs.getString(8), rs.getString(9)};
                 model.addRow(data);
-                // model.fireTableDataChanged(); // notifies the JTable that the model has changed
+                 model.fireTableDataChanged(); // notifies the JTable that the model has changed
                 tabelMahasiswa.revalidate();
             }
             tabelMahasiswa.setRowHeight(130);
-            tabelMahasiswa.getColumnModel().getColumn(0).setPreferredWidth(40);
-            tabelMahasiswa.getColumnModel().getColumn(1).setPreferredWidth(40);
-            tabelMahasiswa.getColumnModel().getColumn(2).setPreferredWidth(50);
-            tabelMahasiswa.getColumnModel().getColumn(3).setPreferredWidth(70);
-            tabelMahasiswa.getColumnModel().getColumn(4).setPreferredWidth(20);
+            tabelMahasiswa.getColumnModel().getColumn(0).setPreferredWidth(20);
+            tabelMahasiswa.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tabelMahasiswa.getColumnModel().getColumn(2).setPreferredWidth(30);
+            tabelMahasiswa.getColumnModel().getColumn(3).setPreferredWidth(90);
+            tabelMahasiswa.getColumnModel().getColumn(4).setPreferredWidth(10);
             tabelMahasiswa.getColumnModel().getColumn(5).setPreferredWidth(30);
             tabelMahasiswa.getColumnModel().getColumn(6).setPreferredWidth(90);
-            tabelMahasiswa.getColumnModel().getColumn(7).setPreferredWidth(50);
-            tabelMahasiswa.getColumnModel().getColumn(6).setPreferredWidth(50);
+            tabelMahasiswa.getColumnModel().getColumn(7).setPreferredWidth(30);
+            tabelMahasiswa.getColumnModel().getColumn(6).setPreferredWidth(40);
         } catch (SQLException ex) {
             Logger.getLogger(MahasiswaAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
